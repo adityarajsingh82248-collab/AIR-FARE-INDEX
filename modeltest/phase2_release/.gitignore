@@ -1,0 +1,25 @@
+# Secrets — never commit real credentials. .env.example is the only tracked template.
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Collected/generated data and logs (fixture or live) — not source-controlled
+DATA/raw/*
+DATA/processed/*
+LOGS/*
+!DATA/raw/.gitkeep
+!DATA/processed/.gitkeep
+!LOGS/.gitkeep
+
+# OS/editor noise
+.DS_Store
+.vscode/
+.idea/

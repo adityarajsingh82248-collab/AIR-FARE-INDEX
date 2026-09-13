@@ -1,0 +1,40 @@
+# Phase 4 ML Configuration
+# Granularity: monthly (Section 12 decision, option b)
+
+granularity: monthly
+forecast_horizon: next_period_monthly
+
+features:
+  lags: [1, 2, 3]  # Prior months
+  rolling_windows: [3]  # 3-month rolling
+  temporal: [month, quarter, year]
+  # No day_of_week (meaningless on monthly data)
+
+split:
+  train_frac: 0.70
+  val_frac: 0.15
+  test_frac: 0.15
+
+baselines:
+  - naive_previous_value
+  - moving_average_3
+  # ARIMA: skipped (insufficient monthly data points for meaningful estimation)
+
+candidates:
+  - linear_regression
+  - random_forest
+  - gradient_boosting
+
+evaluation:
+  primary_metric: mae
+  metrics: [mae, rmse, smape]
+
+anomaly_detection:
+  methods:
+    - rolling_z_score
+    - iqr
+  z_score_threshold: 2.0
+  iqr_multiplier: 1.5
+
+data_mode: DEVELOPMENT_SYNTHETIC
+methodology_version: AIR_INDEX_V1

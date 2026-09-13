@@ -1,0 +1,29 @@
+methodology_version: AIR_INDEX_V1
+base:
+  index_value: 100.0
+  development_base_period: "2026-09"
+  period_field: search_date
+representative_price:
+  method: median
+outlier:
+  method: iqr
+  multiplier: 1.5
+quality:
+  minimum_observations: 3
+  high_threshold: 0.85
+  medium_threshold: 0.60
+booking_windows:
+  - T+1
+  - T+7
+  - T+15
+  - T+30
+  - T+45
+routes:
+  - DEL-BOM
+  - DEL-BLR
+  - BOM-BLR
+  - DEL-CCU
+  - BLR-HYD
+  - MAA-DEL
+fare_definition: total_fare
+cabin: Economy

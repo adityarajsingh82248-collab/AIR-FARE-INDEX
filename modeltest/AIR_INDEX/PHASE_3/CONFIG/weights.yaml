@@ -1,0 +1,10 @@
+# DEVELOPMENT/PROTOTYPE weights only. These are NOT official Government of India weights.
+source_status: DEVELOPMENT_PROTOTYPE
+method: equal_weight
+weights:
+  DEL-BOM: 0.1666666667
+  DEL-BLR: 0.1666666667
+  BOM-BLR: 0.1666666667
+  DEL-CCU: 0.1666666667
+  BLR-HYD: 0.1666666667
+  MAA-DEL: 0.1666666667

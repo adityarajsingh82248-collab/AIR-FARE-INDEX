@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-air_index}
+      POSTGRES_USER: ${POSTGRES_USER:-air_index}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD; do not commit credentials}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+
+  collector:
+    build: ..
+    environment:
+      APP_ENV: ${APP_ENV:-PRODUCTION}
+      COLLECTION_MODE: ${COLLECTION_MODE:-live}
+      DATABASE_URL: ${DATABASE_URL:-postgresql://air_index:${POSTGRES_PASSWORD}@postgres:5432/air_index}
+      REDIS_URL: redis://redis:6379/0
+    command: ["python","-m","PIPELINE.run_collection"]
+    depends_on:
+      - postgres
+      - redis
+
+volumes:
+  pgdata:

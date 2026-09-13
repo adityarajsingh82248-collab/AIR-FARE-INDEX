@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IATA_AirShoppingRS xmlns="http://www.iata.org/IATA/2015/EASD/00/IATA_OffersAndOrdersMessage">
+  <Response xmlns:c="http://www.iata.org/IATA/2015/EASD/00/IATA_OffersAndOrdersCommonTypes">
+    <c:DataLists>
+      <c:DatedMarketingSegmentList>
+        <c:DatedMarketingSegment>
+          <c:Arrival><c:AircraftScheduledDateTime>2026-09-09T10:30:00</c:AircraftScheduledDateTime><c:IATA_LocationCode>BOM</c:IATA_LocationCode></c:Arrival>
+          <c:CarrierDesigCode>6E</c:CarrierDesigCode>
+          <c:DatedMarketingSegmentId>Mkt-seg-demo</c:DatedMarketingSegmentId>
+          <c:DatedOperatingSegmentRefId>Opr-seg-demo</c:DatedOperatingSegmentRefId>
+          <c:Dep><c:AircraftScheduledDateTime>2026-09-09T08:20:00</c:AircraftScheduledDateTime><c:IATA_LocationCode>DEL</c:IATA_LocationCode></c:Dep>
+          <c:MarketingCarrierFlightNumberText>1234</c:MarketingCarrierFlightNumberText>
+        </c:DatedMarketingSegment>
+      </c:DatedMarketingSegmentList>
+      <c:DatedOperatingSegmentList>
+        <c:DatedOperatingSegment>
+          <c:DatedOperatingSegmentId>Opr-seg-demo</c:DatedOperatingSegmentId>
+          <c:DatedOperatingLegRefID>seg-demo-leg0</c:DatedOperatingLegRefID>
+          <c:Duration>PT2H10M</c:Duration>
+        </c:DatedOperatingSegment>
+      </c:DatedOperatingSegmentList>
+      <c:PaxJourneyList><c:PaxJourney><c:PaxJourneyID>fl-demo</c:PaxJourneyID><c:PaxSegmentRefID>seg-demo</c:PaxSegmentRefID></c:PaxJourney></c:PaxJourneyList>
+      <c:PaxSegmentList><c:PaxSegment><c:PaxSegmentID>seg-demo</c:PaxSegmentID><c:DatedMarketingSegmentRefId>Mkt-seg-demo</c:DatedMarketingSegmentRefId><c:CabinTypeAssociationChoice><c:SegmentCabinType><c:CabinTypeName>Economy</c:CabinTypeName></c:SegmentCabinType></c:CabinTypeAssociationChoice></c:PaxSegment></c:PaxSegmentList>
+      <c:PriceClassList><c:PriceClass><c:PriceClassID>pc-demo</c:PriceClassID><c:Name>Regular Fare</c:Name></c:PriceClass></c:PriceClassList>
+    </c:DataLists>
+    <c:OffersGroup>
+      <c:CarrierOffers>
+        <c:Offer>
+          <c:OfferID>offer-demo-1</c:OfferID>
+          <c:JourneyOverview><c:JourneyPriceClass><c:PaxJourneyRefID>fl-demo</c:PaxJourneyRefID><c:PriceClassRefID>pc-demo</c:PriceClassRefID></c:JourneyPriceClass></c:JourneyOverview>
+          <c:OfferItem>
+            <c:FareDetail><c:FareComponent><c:PaxSegmentRefID>seg-demo</c:PaxSegmentRefID><c:PriceClassRefID>pc-demo</c:PriceClassRefID><c:CabinType><c:CabinTypeName>Economy</c:CabinTypeName></c:CabinType></c:FareComponent><c:PaxRefID>ADT0</c:PaxRefID><c:Price><c:BaseAmount CurCode="INR">5000.00</c:BaseAmount><c:TaxSummary><c:TotalTaxAmount CurCode="INR">900.00</c:TotalTaxAmount></c:TaxSummary><c:TotalAmount CurCode="INR">5900.00</c:TotalAmount></c:Price></c:FareDetail>
+            <c:OfferItemID>offer-item-demo-1</c:OfferItemID>
+            <c:Price><c:BaseAmount CurCode="INR">5000.00</c:BaseAmount><c:TaxSummary><c:TotalTaxAmount CurCode="INR">900.00</c:TotalTaxAmount></c:TaxSummary><c:TotalAmount CurCode="INR">5900.00</c:TotalAmount></c:Price>
+          </c:OfferItem>
+        </c:Offer>
+      </c:CarrierOffers>
+    </c:OffersGroup>
+  </Response>
+</IATA_AirShoppingRS>

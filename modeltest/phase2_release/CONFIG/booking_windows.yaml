@@ -1,0 +1,11 @@
+booking_windows:
+  - label: T+1
+    lead_time_days: 1
+  - label: T+7
+    lead_time_days: 7
+  - label: T+15
+    lead_time_days: 15
+  - label: T+30
+    lead_time_days: 30
+  - label: T+45
+    lead_time_days: 45

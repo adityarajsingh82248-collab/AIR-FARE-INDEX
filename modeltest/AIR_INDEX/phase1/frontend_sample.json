@@ -1,0 +1,90 @@
+{
+  "_note": "Structural contract sample for Khushi/frontend + Aditya/FastAPI. Fields marked null are PENDING future phases (index engine, anomaly ML, forecasting ML) and must not be fabricated.",
+  "index_summary": {
+    "date": "2026-09-05",
+    "overall_index": null,
+    "daily_change": null,
+    "weekly_change": null,
+    "monthly_change": null,
+    "note": "Index fields are structural placeholders. This sample dataset is a single search-date snapshot (2026-09-05); index calculation requires a defined base period, finalized route weights, and multi-day time series, none of which exist yet."
+  },
+  "route_summary": [
+    {
+      "route": "BLR-HYD",
+      "current_representative_fare": 6792.5,
+      "route_index": null,
+      "daily_change": null,
+      "observation_count": 81
+    },
+    {
+      "route": "BOM-BLR",
+      "current_representative_fare": 6133.5,
+      "route_index": null,
+      "daily_change": null,
+      "observation_count": 98
+    },
+    {
+      "route": "DEL-BLR",
+      "current_representative_fare": 6927.0,
+      "route_index": null,
+      "daily_change": null,
+      "observation_count": 79
+    },
+    {
+      "route": "DEL-BOM",
+      "current_representative_fare": 7207.0,
+      "route_index": null,
+      "daily_change": null,
+      "observation_count": 78
+    },
+    {
+      "route": "DEL-CCU",
+      "current_representative_fare": 6581.5,
+      "route_index": null,
+      "daily_change": null,
+      "observation_count": 75
+    },
+    {
+      "route": "MAA-DEL",
+      "current_representative_fare": 7393.0,
+      "route_index": null,
+      "daily_change": null,
+      "observation_count": 89
+    }
+  ],
+  "anomaly_sample": [
+    {
+      "route": "BOM-BLR",
+      "date": "2026-09-12",
+      "fare": 10126.0,
+      "anomaly_score": null,
+      "status": "NORMAL"
+    },
+    {
+      "route": "BOM-BLR",
+      "date": "2026-10-05",
+      "fare": 9913.0,
+      "anomaly_score": null,
+      "status": "NORMAL"
+    },
+    {
+      "route": "BOM-BLR",
+      "date": "2026-10-20",
+      "fare": 9786.0,
+      "anomaly_score": null,
+      "status": "NORMAL"
+    }
+  ],
+  "forecast_sample": [
+    {
+      "route": "MAA-DEL",
+      "forecast_date": null,
+      "predicted_value": null
+    },
+    {
+      "route": "BLR-HYD",
+      "forecast_date": null,
+      "predicted_value": null
+    }
+  ]
+}

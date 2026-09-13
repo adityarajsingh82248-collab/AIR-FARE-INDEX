@@ -1,0 +1,2 @@
+source,observation_count,routes,airlines,availability_breakdown,missingness_pct
+Sample Data,500,6,5,"{'AVAILABLE': 454, 'SOLD_OUT': 35, 'MISSING': 11}",0.0

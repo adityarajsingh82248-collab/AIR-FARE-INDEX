@@ -1,0 +1,7 @@
+-- AIR-INDEX Phase 3 canonical migration entry point.
+--
+-- The canonical Phase 3 schema is maintained in phase3_migration.sql.
+-- This compatibility filename intentionally contains no duplicate DDL.
+-- Apply PHASE_3/DATABASE/phase3_migration.sql after the Phase 2 schema.
+-- Keeping this file prevents tooling and older integrations from breaking
+-- while ensuring there is only one authoritative Phase 3 schema definition.

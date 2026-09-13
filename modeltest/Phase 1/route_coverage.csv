@@ -1,0 +1,7 @@
+route,observations,airlines,sources,booking_windows,date_start,date_end,median_fare,missing_windows
+BLR-HYD,81,5,1,5,2026-09-06,2026-10-20,6740.0,none
+BOM-BLR,98,5,1,5,2026-09-06,2026-10-20,6133.5,none
+DEL-BLR,79,5,1,5,2026-09-06,2026-10-20,6863.0,none
+DEL-BOM,78,5,1,5,2026-09-06,2026-10-20,7205.5,none
+DEL-CCU,75,5,1,5,2026-09-06,2026-10-20,6581.0,none
+MAA-DEL,89,5,1,5,2026-09-06,2026-10-20,7412.0,none

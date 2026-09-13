@@ -1,0 +1,28 @@
+Field,Description,Data Type,Example,Required/Optional,Validation Rule
+observation_id,Unique identifier for one fare observation,string,A0001,Required,Must be unique
+origin,Origin airport IATA code,string (3-letter),DEL,Required,Must be in known airport set; != destination
+destination,Destination airport IATA code,string (3-letter),BOM,Required,Must be in known airport set; != origin
+route,Derived route identifier = origin-destination,string,DEL-BOM,Derived,Computed field
+airline,"Operating airline, standardized name",categorical,IndiGo,Required,Must map to airline master list
+travel_date,Date of the flight,date (YYYY-MM-DD),2026-09-06,Required,Must be >= search_date
+search_date,Date the fare was queried,date (YYYY-MM-DD),2026-09-05,Required,Valid date
+search_time,Time of day the fare was queried,time (HH:MM),23:06,Required,Valid 24h time
+search_hour,Hour extracted from search_time,integer 0-23,23,Derived,Computed field
+lead_time,Stated booking-window label,categorical,T+1,Required,"One of T+1, T+7, T+15, T+30, T+45"
+lead_time_days,Calculated days between search_date and travel_date,integer,1,Derived,Should equal the lead_time label
+fare_class,Cabin / fare class,categorical,Economy,Required,Non-empty
+base_fare,Base fare component (INR),numeric,8574,Required,>= 0
+taxes,Tax component (INR),numeric,781,Required,>= 0
+fees,Fee component (INR),numeric,112,Required,>= 0
+total_fare,Total quoted fare (INR),numeric,9467,Required,Should equal base_fare + taxes + fees (± tolerance); > 0
+availability,Booking status at time of query,categorical,AVAILABLE,Required,"One of AVAILABLE, SOLD_OUT, UNAVAILABLE, SCRAPE_ERROR, MISSING"
+usable_for_index,"Whether this observation is a purchasable, valid, actionable fare",boolean,TRUE,Derived,TRUE only if AVAILABLE and VALID and fare-consistent
+source,Data source / collector,categorical,Sample Data,Required,Non-empty (single value in this sample)
+timestamp,Full search timestamp,datetime,2026-09-05 23:06,Required,Should equal search_date + search_time
+route_median_fare,Median total_fare for this route among AVAILABLE observations,numeric,7205.5,Derived,Computed field
+fare_deviation_pct,Percent deviation of total_fare from route_median_fare,numeric (%),3.2,Derived,Computed field
+fare_consistency_flag,Result of base+taxes+fees vs total_fare check,categorical,VALID,Derived,VALID / MINOR_DIFFERENCE / INVALID / MISSING_COMPONENT
+validation_status,Overall row validity,categorical,VALID,Derived,VALID / INVALID
+validation_reason,Semicolon-separated list of validation problems,string,,Derived,Empty if VALID
+duplicate_flag,Duplicate/repeat classification,categorical,UNIQUE,Derived,EXACT_DUPLICATE / TRUE_DUPLICATE_SAME_TIMESTAMP / INTRADAY_REPEAT_CHECK / UNIQUE
+outlier_flag,Statistical outlier flag (route-level IQR on AVAILABLE fares),categorical,NORMAL,Derived,NORMAL / STATISTICAL_OUTLIER

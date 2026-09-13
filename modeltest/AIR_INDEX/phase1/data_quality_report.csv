@@ -1,0 +1,42 @@
+metric,value
+DATASET SIZE,
+original_rows,500
+final_rows,500
+rows_deleted,0
+,
+MISSING DATA,
+missing_cells_before,0
+missing_cells_after,0
+,
+DUPLICATES,
+exact_duplicates,0
+true_duplicates_same_timestamp,0
+intraday_repeat_checks_retained,482
+removed,0
+,
+INVALID RECORDS,
+count,0
+,
+OUTLIERS,
+flagged,0
+,
+ROUTE COVERAGE,
+routes,6
+,
+AIRLINE COVERAGE,
+airlines,5
+,
+SOURCE COVERAGE,
+sources,1
+,
+BOOKING WINDOW COVERAGE,
+T+1,110
+T+7,92
+T+15,110
+T+30,94
+T+45,94
+,
+DATE COVERAGE,
+start,2026-09-06
+end,2026-10-20
+search_snapshot_date,2026-09-05
